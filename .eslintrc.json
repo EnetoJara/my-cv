@@ -1,0 +1,51 @@
+{
+  "extends": ["plugin:jest/recommended", "prettier", "prettier/react"],
+  "plugins": ["jest", "prettier", "react", "import"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "react/require-default-props": 0,
+    "react/destructuring-assignment": 1,
+    "react/prop-types": 0,
+    "react/no-access-state-in-setstate": 1,
+    "react/sort-comp": 1,
+    "jsx-a11y/click-events-have-key-events": 1,
+    "jsx-a11y/no-static-element-interactions": 1,
+    "no-shadow": 1,
+    "no-unused-expressions": 1,
+    "prefer-destructuring": 1,
+    "consistent-return": 1,
+    "prefer-promise-reject-errors": 1,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    ]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": false,
+    "codeFrame": true,
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    }
+  },
+  "settings": {
+    "polyfills": ["promises"],
+    "import/resolver": {
+      "node": {
+        "paths": ["!./scr/__mock__/*", "./src/**"],
+        "moduleDirectory": "node_modules"
+      }
+    }
+  }
+}

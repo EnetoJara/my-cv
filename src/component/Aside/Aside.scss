@@ -1,0 +1,66 @@
+@import '../../styles/colors';
+
+.main-aside {
+  background-color: white;
+  position: fixed;
+  width: 27.1rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 666;
+  box-shadow: 0 8px 16px 0 rgba($primary, 0.7),
+    0 12px 40px 0 rgba($primary, 0.7);
+  transform: translateX(0);
+
+  &__cv {
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 3rem;
+    width: 100%;
+
+    &:hover {
+      background-color: $darken;
+    }
+  }
+
+  &__full {
+    transition: ease 0.3s;
+  }
+
+  &__logo {
+    font-weight: 600;
+  }
+
+  &__toggle {
+    margin-top: auto;
+    align-self: flex-end;
+  }
+}
+
+.hide {
+  transform: translateX(-28rem);
+  box-shadow: none;
+}
+
+.aside-bg {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: #000, $alpha: 0.6);
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 555;
+}
+
+.display {
+  z-index: -999;
+  transition: ease-out 0.3s;
+}

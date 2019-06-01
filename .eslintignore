@@ -1,0 +1,16 @@
+/coverage
+/config
+/envs
+/scripts
+/dist
+/dist-storybook
+/ignored
+!.eslintrc.js
+!/.storybook
+/build
+/__mocks__
+/src/__mocks__
+/config
+/lib
+/babel.config.js
+/src/styles/bootstrap-grid.css
