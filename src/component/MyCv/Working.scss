@@ -1,0 +1,82 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.working-exp {
+  margin: 0;
+  padding: 0;
+
+  &__title {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: $lighten;
+    text-shadow: 1px 1px 2px black, 0 0 25px $primary, 0 0 5px $darken;
+  }
+}
+
+.dates {
+  margin: 2rem 0;
+}
+
+.developer {
+  margin: 2rem 0;
+  display: block;
+  font-weight: 100;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-style: italic;
+  letter-spacing: 0.01875rem;
+}
+
+.heading-title {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 20px $primary, 0 0 5px $darken;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+@include desktop {
+  .heading-title {
+    width: 20rem;
+    height: 4rem;
+    margin-left: -1rem;
+    position: relative;
+    background: $primary;
+    text-shadow: 1px 1px 2px black, 0 0 2px $darken,
+      0 0 5px darken($color: $darken, $amount: 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #f2f2f2;
+    box-shadow: 10px 8px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+@include desktop-hd {
+  .heading-title {
+    margin: 3rem -6rem 1rem;
+  }
+
+  .heading-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 2rem solid #f2f2f2;
+    border-top: 2rem solid transparent;
+    border-bottom: 2rem solid transparent;
+  }
+
+  .heading-title::before {
+    content: '';
+    position: absolute;
+    right: -2rem;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 2rem solid $primary;
+    border-top: 2rem solid transparent;
+    border-bottom: 2rem solid transparent;
+  }
+}

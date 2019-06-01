@@ -5,20 +5,13 @@
   "private": true,
   "scripts": {
     "start": "REACT_APP_ENV=local node scripts/start.js",
-    "prebuild": "rm -rf ./build ./coverage",
-    "build": "node scripts/build.js",
-    "build:prod": "rm -rf ./.env && cp ./jenkins-envs/production ./.env && GENERATE_SOURCEMAP=false npm run build",
-    "n2n": "DEBUG=nightmare:* && mkdir -p screenshots && rm -rf ./screenshots/* && NODE_ENV=test node scripts/test.js --moduleNameMapper='{\"^.+\\\\.(css|less|scss)$\":\"<rootDir>/__mocks__/styleMock.js\",\"^.+\\\\.(svg|mp3|png|ico)$\": \"<rootDir>/__mocks__/fileMock.js\"}' --bail --env=jsdom ./src/__visual-tests__/*.test.js",
+    "build": "GENERATE_SOURCEMAP=false REACT_APP_ENV=production NODE_ENV=production node scripts/build.js",
     "precoverage": "rm -rf ./coverage",
     "coverage": "npm run test -- --coverage",
     "lint:es-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
     "lint:es": "eslint --ignore-pattern ./src/__mocks__/ --config .eslintrc.json --ext js ./src --fix",
     "lint": "run-p -l lint:*",
-    "lint:scss": "sass-lint -v -q",
-    "precommit": "npm run lint",
-    "prepush": "CI=true npm test",
-    "test": "NODE_ENV=test node scripts/test.js --testPathIgnorePatterns ./__visual-tests__/ --testPathIgnorePatterns ./src/containers/*.js --moduleNameMapper='{\"^.+\\\\.(css|less|scss)$\":\"<rootDir>/__mocks__/styleMock.js\",\"^.+\\\\.(svg|mp3|png|ico)$\": \"<rootDir>/__mocks__/fileMock.js\"}'",
-    "styles": "stylelint ./src/styles/*.scss --fix && stylelint  ./src/**/**/*scss --fix"
+    "lint:scss": "sass-lint -v -q"
   },
   "dependencies": {
     "@babel/polyfill": "7.4.4",
@@ -58,12 +51,6 @@
     "ChromeAndroid >= 69.0",
     "safari >= 11"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit",
-      "pre-push": "npm run prepush"
-    }
-  },
   "devDependencies": {
     "@babel/cli": "7.4.4",
     "@babel/core": "7.4.4",
@@ -182,6 +169,7 @@
     "redux-mock-store": "1.5.3",
     "redux-saga-test-plan": "4.0.0-beta.3",
     "resolve": "1.10.1",
+    "rimraf": "2.6.3",
     "sass-lint": "1.13.1",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",

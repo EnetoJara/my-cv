@@ -2,13 +2,8 @@
 
 .main-header {
   width: 100%;
-  padding: 0;
-  margin: 0;
-  height: 7rem;
   background-color: $primary;
-  display: block;
-  justify-content: space-between;
-  flex-flow: column;
+  height: 7rem;
 
   &-line {
     height: 2rem;
