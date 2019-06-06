@@ -40,7 +40,36 @@ export default () => {
             <span>May 2018</span>
           </span>
           <span className="developer">Java Developer</span>
+          <h3>PTI</h3>
+          <p>
+            As a developer at PTI an internal application of IBM for pricing and
+            costing the products that IBM sells. We developed a responsive SPA
+            on AngularJS & Angular Material, which was consuming a rest API
+            builded on NodeJS connected to a DB2 databse.
+          </p>
+          <small>Direct boss jose.guadalupe.garcia@ibm.com</small>
+          <h3>WWPRT</h3>
+          <p>
+            As a developer at WWPRT I calculated the price and cost of the
+            products of that IBM sells, I used Java as main programing language,
+            with it I used: Hibernate, Spring, DAOs, Managers for the backend to
+            manage the information of a DB2 database. For the frontend I used
+            struts, freemaker, Actions. I helped with one of the most important
+            requirement for the Cost side of the application in the Saas Query
+            Report.
+          </p>
+          <small>Direct boss jlperedo@mx1.ibm.com</small>
         </span>
+      </div>
+      <div className="working-exp__title">
+        <h1>Education</h1>
+      </div>
+      <div className="working-exp__text">
+        <h3>Universidad Enrique Diaz de Leon</h3>
+        <Calendar className="icon-phone" /> <span>2012</span> {'/'}{' '}
+        <span>2016</span>
+        <p>Degree in Software Engineering</p>
+        <h3>Courses</h3>
       </div>
     </div>
   );
