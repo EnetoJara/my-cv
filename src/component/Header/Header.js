@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { shouldSquash } from '../../redux/app/actions';
+import Quater from '../../styles/icons/equalizer.svg';
 import './Header.scss';
 class Header extends Component {
   onToggleHandler = evt => {
@@ -15,13 +16,15 @@ class Header extends Component {
       <header className="main-header">
         <div className="main-header-line" />
         <div className="main-header__section">
-          <div className="main-header__logo">logo</div>
-          <div className="main-header__name">
-            name
-            <button onClick={this.onToggleHandler} type="button">
-              side
-            </button>
-          </div>
+          <button
+            className="main-header__btn-sidebar"
+            onClick={this.onToggleHandler}
+            type="button"
+          >
+            <Quater className="main-header__icon" />
+          </button>
+
+          <div className="main-header__name">name</div>
         </div>
       </header>
     );

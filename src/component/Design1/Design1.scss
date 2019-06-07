@@ -1,0 +1,125 @@
+@import '../../styles/mixins';
+
+.car {
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+
+  &-header {
+    display: block;
+
+    &__top {
+      margin: 1rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__bottom {
+      padding: 1rem 3rem;
+      color: #eee;
+      height: 40rem;
+      margin: 0 -2rem;
+      background: url('../../styles/icons/hero.jpg') no-repeat center center
+        fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+      /* Set up proportionate scaling */
+    }
+  }
+
+  &-icons {
+    padding: 2rem;
+    background: linear-gradient(to right, #e44e52 0%, #741d51 100%);
+    color: white;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column nowrap;
+
+    &__section {
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      > img {
+        margin-right: 2rem;
+        width: 5rem;
+      }
+    }
+  }
+}
+
+.form {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-input {
+    margin-top: 4rem;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: lighter;
+    font-style: italic;
+
+    &::placeholder {
+      color: #c6c6c6;
+      font-weight: lighter;
+    }
+  }
+
+  &__lupa {
+    position: absolute;
+    top: 4.4rem;
+    right: -7px;
+    cursor: pointer;
+  }
+}
+
+@include tablet {
+  .car {
+    &-icons {
+      display: flex;
+      flex-flow: row;
+    }
+  }
+  .form {
+    width: 50%;
+  }
+}
+
+@include desktop {
+  .car-header__bottom {
+    height: 70vh;
+
+    .hero > h2,
+    p {
+      margin-left: 10rem;
+    }
+  }
+
+  .form {
+    width: 30%;
+    margin-left: 10rem;
+
+    &-input {
+      font-size: 4rem;
+    }
+
+    &__lupa {
+      top: 5.4rem;
+      right: -11px;
+    }
+  }
+}
