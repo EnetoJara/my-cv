@@ -134,7 +134,7 @@
     "helmet": "3.16.0",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "husky": "2.1.0",
-    "i": "0.3.6",
+    "i": "0.3.7",
     "identity-obj-proxy": "3.0.0",
     "ignore-styles": "5.0.1",
     "install": "0.12.2",
